@@ -1,3 +1,8 @@
+:root{
+    --width: 5;
+    --length: 5;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -7,13 +12,27 @@ body {
 }
 
 .container {
-    flex-wrap: wrap;
-    height: 208px;
-    width: 170.5px;
-    display: flex;
+ margin: 0;
+ min-width: 75%;
+min-height: auto;
+display: flex;
+
+justify-content: center;
+align-items: center;
+
 }
 
-.child {
-    padding: 20px;
-    border: solid black 1px;
+.grid {
+  
+    display: grid;
+    grid-template-columns: repeat(var(--length), 1fr);
+    grid-template-rows: repeat(var(--width), 1fr);
+}
+
+.grid-item {
+    border: solid 5px black;
+}
+
+.item {
+    border: black 1px solid;
 }
