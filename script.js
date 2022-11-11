@@ -1,51 +1,40 @@
 const container = document.querySelector(".container");
+const buttonContainer = container.appendChild(document.createElement("div"));
+const gridContainer = container.appendChild(document.createElement("div"));
+const button = buttonContainer.appendChild(document.createElement("button"));
+const clear = buttonContainer.appendChild(document.createElement("button"))
+
+clear.innerText = "Clear"
+gridContainer.classList.add("grid-container");
+
+button.innerText = "8 X 8"
 
 
-
-
-const prompt = document.createElement("button");
-prompt.innerHTML = "Select Me";
-
-const finalPrompt = container.appendChild(prompt);
-
-const grid = container.appendChild(document.createElement("div"));
-
-grid.classList.add("grid");
-
-let gridSizeLength = getComputedStyle(grid).getPropertyValue("--length");
-let gridSizeWidth = getComputedStyle(grid).getPropertyValue("--width");
-
-
-
-finalPrompt.addEventListener("click", () => {
-    let input = window.prompt ("What's the grid size");
-    gridSizeLength = input;
-    gridSizeWidth = input;
+button.addEventListener("click", () => {
     
-    for (i=1; i <= input; i++) {
-        const gridItem = grid.appendChild(document.createElement("div"))
-        gridItem.classList.add("grid-item");
-        gridItem.innerHTML = input;
-    }   
+    for (i = 1; i <= 256; i++) {    
+    let grid = gridContainer.appendChild(document.createElement("div"));
+    grid.classList.add("grid-item");
 
+    grid.addEventListener("mouseenter", () => {
+        grid.style.backgroundColor = "blue";
+    })
+    
+}
+
+
+})
+
+clear.addEventListener("click", () =>  {
+    const childNodes = gridContainer.childNodes;
+
+    childNodes.forEach((node) => {
+        node.style.backgroundColor = "white";
+
+    })
 })
 
 
 
-/* create an onclick event that takes a prompt and uses that number to create the amount of grids 
 
-
-
-
-/* for (i = 0; i <= 15; i++) {
-    let item = document.createElement("div");
-    item.setAttribute("class", "child");
-    container.append(item);
-}
-
-let grids = document.querySelectorAll(".child");
-
-grids.forEach(grid => grid.addEventListener("mouseover", (e) => {
-    e.target.style.backgroundColor = "red";
-})); */
 
