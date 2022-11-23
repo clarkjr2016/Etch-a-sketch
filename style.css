@@ -1,94 +1,26 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-:root {
-	--grid-container-height: 80vh;
-	--grid-container-width: 75vw;
-	--grid-item-height: 0;
-	--grid-item-width: 0;
-}
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+* {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 
-/* ------------------------------------------------------------------------------------------------------- */
-
-body {
-    display: flex;
-	justify-content: center;
+body{
+	display: flex;
 	align-items: center;
-	min-height: 100vh;
-	min-width: auto;
-}
-
-.button-container {
-border: solid black 5px;
+	justify-content: center;
+	height: 100vh;
+	
 }
 
 .grid-container {
 	display: grid;
-	padding: auto;
-	height: var(--grid-container-height);
-	width: var(--grid-container-width);
-	grid-template-columns: repeat(16, 1fr);
-	grid-template-rows: repeat(16, 1fr);
-	border: solid black 5px;
+	border: 5px solid black;
+	height: 25vh;
+	width:25vw;
 
 }
 
 .grid-item {
-/* border: solid black 5px; */
-width: var(--grid-container-width)/16;
-height: var(--grid-container-height)/16;
-border: solid red 1px;
-background-color: white;
-
+	border: 1px solid red;
+	
 }
-
-.grid-item-1 {
-background-color: white;
-border: solid black 1px;
-}
-

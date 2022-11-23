@@ -1,38 +1,33 @@
-const container = document.querySelector(".container");
-const buttonContainer = container.appendChild(document.createElement("div"));
-const gridContainer = container.appendChild(document.createElement("div"));
-const button = buttonContainer.appendChild(document.createElement("button"));
-const clear = buttonContainer.appendChild(document.createElement("button"))
+const container = document.querySelector(".container"); // container for buttons and grid
+const buttonContainer = container.appendChild(document.createElement("div")); // Container for buttons
+const gridContainer = container.appendChild(document.createElement("div")); // Container for grid
+const button = buttonContainer.appendChild(document.createElement("button")); // grid button
+const clear = buttonContainer.appendChild(document.createElement("button")); // clear button
 
-clear.innerText = "Clear"
-gridContainer.classList.add("grid-container");
+gridContainer.classList.add("grid-container"); // adding a class to the grid container so that I can add the squares to the grid container
 
-button.innerText = "8 X 8"
+button.innerText = "Grid Size"
+
+
 
 
 button.addEventListener("click", () => {
-    
-    for (i = 1; i <= 256; i++) {    
-    let grid = gridContainer.appendChild(document.createElement("div"));
-    grid.classList.add("grid-item");
 
-    grid.addEventListener("mouseenter", () => {
-        grid.style.backgroundColor = "blue";
-    })
-    
+const input = prompt("Select a size that you want your grid to be");
+
+gridContainer.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+gridContainer.style.gridTemplateRows =`repeat(${input}, 1fr)`;
+for (i = 0; i < input * input; i++) {
+
+const gridItem = document.createElement("div");
+gridItem.classList.add("grid-item");
+gridContainer.appendChild(gridItem);
 }
 
 
+
 })
 
-clear.addEventListener("click", () =>  {
-    const childNodes = gridContainer.childNodes;
-
-    childNodes.forEach((node) => {
-        node.style.backgroundColor = "white";
-
-    })
-})
 
 
 
