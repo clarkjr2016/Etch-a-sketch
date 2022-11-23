@@ -7,21 +7,32 @@ const clear = buttonContainer.appendChild(document.createElement("button")); // 
 gridContainer.classList.add("grid-container"); // adding a class to the grid container so that I can add the squares to the grid container
 
 button.innerText = "Grid Size"
-
-
-
+clear.innerText =  "Clear"
 
 button.addEventListener("click", () => {
+  const input = prompt("Select a size that you want your grid to be"); // this is the input and the number that determines how many rows and columns there will be.
+  gridContainer.style.gridTemplateColumns = `repeat(${input}, 1fr)`; // this is to create columns based off user input
+  gridContainer.style.gridTemplateRows =`repeat(${input}, 1fr)`; // this is to create rows based off user input
 
-const input = prompt("Select a size that you want your grid to be");
+  function clearGrid() {
+    gridContainer.innerHTML = ""
 
-gridContainer.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
-gridContainer.style.gridTemplateRows =`repeat(${input}, 1fr)`;
-for (i = 0; i < input * input; i++) {
+    };
 
-const gridItem = document.createElement("div");
+
+  for (i = 0; i < input * input; i++) {
+  const gridItem = document.createElement("div")
+  ;
 gridItem.classList.add("grid-item");
 gridContainer.appendChild(gridItem);
+
+
+gridItem.addEventListener("mouseover", () => {
+  gridItem.style.backgroundColor = "grey";
+})
+
+clear.addEventListener("click", clearGrid);
+
 }
 
 

@@ -15,8 +15,8 @@ body{
 .grid-container {
 	display: grid;
 	border: 5px solid black;
-	height: 25vh;
-	width:25vw;
+	height: 75vh;
+	width:75vw;
 
 }
 
